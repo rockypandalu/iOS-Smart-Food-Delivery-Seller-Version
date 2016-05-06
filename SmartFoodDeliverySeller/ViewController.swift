@@ -11,29 +11,34 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var QRImageView: UIImageView!
     
     var orderID:String?
     override func viewDidLoad() {
         super.viewDidLoad()
-        let defaultCenter = NSNotificationCenter.defaultCenter()
-        defaultCenter.addObserver(self,
-                                  selector: "handleCompleteDownload",
-                                  name: "CompleteDownloadNotification",
-                                  object: nil)
+        //Add Notification Receiver
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "UpdateOrder:", name: "OrderChangedNotification", object: nil)
+
     }
     @IBOutlet weak var OrderInfoLabel: UILabel!
-    func upDateView(order:String,uuid:String){
-        print(order)
-        orderID=order
 
+    func UpdateOrder(notification: NSNotification) {
+        //deal with notification.userInfo
+        let dictOrder = notification.userInfo as? NSDictionary
+        if let order = dictOrder!["order"] as? String{
+            OrderInfoLabel.text=order
+        }
+        if let uid = dictOrder!["uid"] as? String{
+            QRImageView.image={
+                var qrCode=QRCode(uid)
+                qrCode?.color=CIColor(rgba: "5a44ad")
+                return qrCode!.image
+                }()
+        }
+        
         
     }
-    func handleCompleteDownload() {
-        // if notification received, change label value
-//        OrderInfoLabel.text = notification.userInfo!["order"] as! String
-//        print(notification.userInfo)
-print("daf")
-    }
+
     @IBAction func PickUpAction(sender: AnyObject) {
         let delegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let deviceToken = delegate.uid

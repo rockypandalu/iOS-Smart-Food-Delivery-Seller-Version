@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -27,6 +28,7 @@
                                 <rect key="frame" x="185" y="87" width="230" height="230"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="230" id="OfI-lv-eGQ"/>
+                                    <constraint firstAttribute="width" secondItem="mSB-hc-LIz" secondAttribute="height" multiplier="1:1" id="guI-oZ-8se"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Delivery Destination" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yva-EH-zy6">
@@ -94,6 +96,7 @@
                     </view>
                     <connections>
                         <outlet property="OrderInfoLabel" destination="z2W-TZ-QyL" id="8zr-Gz-k9c"/>
+                        <outlet property="QRImageView" destination="mSB-hc-LIz" id="c0f-Ex-Ntp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

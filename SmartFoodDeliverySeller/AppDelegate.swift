@@ -28,22 +28,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]){
-        
-        let defaultCenter = NSNotificationCenter.defaultCenter()
-
-        if let aps = userInfo["aps"] as? NSDictionary {
-            if let food = aps["food"] as? NSString {
-                print(food)
-                order = food as! String
-            }
-            if let uuid = aps["uuid"] as? NSString{
-                uid = uuid as! String
-            }
-            viewController.upDateView(order!,uuid:uid!)
+        if let orderID = userInfo["uuid"] as? String {
+            uid=orderID
         }
-        defaultCenter.postNotificationName("CompleteDownloadNotification",
-                                           object: nil,
-                                           userInfo: nil)
+        if let food = userInfo["food"] as? String{
+            order = food
+        }
+
+        NSNotificationCenter.defaultCenter().postNotificationName("OrderChangedNotification", object: nil, userInfo: ["order": order!,"uid":uid!])
 
     }
     
