@@ -10,7 +10,6 @@ import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    
     var window: UIWindow?
     var order: String?
     var uid: String?
@@ -37,11 +36,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             if let uuid = aps["uuid"] as? NSString{
                 uid = uuid as! String
             }
-            viewController.upDateView()
+            viewController.upDateView(order!,uuid:uid!)
         }
-        NSNotificationCenter.defaultCenter().postNotificationName("myNotif", object: nil, userInfo: userInfo as [NSObject : AnyObject])
-        // This is where you read your JSON to know what kind of notification you received, for example :
-        
+
     }
     
     

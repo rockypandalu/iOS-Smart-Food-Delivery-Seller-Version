@@ -54,12 +54,15 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yNx-o7-TQa">
-                                <rect key="frame" x="249" y="499" width="103" height="48"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yNx-o7-TQa">
+                                <rect key="frame" x="236" y="499" width="131" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="Pick Up"/>
+                                <state key="normal" title="Open Box"/>
+                                <connections>
+                                    <action selector="PickUpAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7I8-KY-AL3"/>
+                                </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z2W-TZ-QyL">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z2W-TZ-QyL">
                                 <rect key="frame" x="173" y="462" width="254" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="RoK-AC-eDD"/>
@@ -89,6 +92,9 @@
                             <constraint firstItem="yNx-o7-TQa" firstAttribute="top" secondItem="z2W-TZ-QyL" secondAttribute="bottom" constant="16" id="yPT-tA-Xan"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="OrderInfoLabel" destination="z2W-TZ-QyL" id="8zr-Gz-k9c"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
