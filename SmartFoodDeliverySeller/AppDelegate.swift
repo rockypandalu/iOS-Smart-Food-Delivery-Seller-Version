@@ -26,8 +26,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
         print("DEVICE TOKEN = \(deviceToken)")
     }
-    
+
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]){
+        
+        let defaultCenter = NSNotificationCenter.defaultCenter()
+
         if let aps = userInfo["aps"] as? NSDictionary {
             if let food = aps["food"] as? NSString {
                 print(food)
@@ -38,6 +41,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
             viewController.upDateView(order!,uuid:uid!)
         }
+        defaultCenter.postNotificationName("CompleteDownloadNotification",
+                                           object: nil,
+                                           userInfo: nil)
 
     }
     

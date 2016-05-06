@@ -15,25 +15,24 @@ class ViewController: UIViewController {
     var orderID:String?
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-//        OrderInfoLabel.text="No order Yet"
-//        upDateView("ds", uuid: "asdf")
+        let defaultCenter = NSNotificationCenter.defaultCenter()
+        defaultCenter.addObserver(self,
+                                  selector: "handleCompleteDownload",
+                                  name: "CompleteDownloadNotification",
+                                  object: nil)
     }
     @IBOutlet weak var OrderInfoLabel: UILabel!
     func upDateView(order:String,uuid:String){
         print(order)
         orderID=order
-//        OrderInfoLabel.text=order
-//        var th1=NSThread(target:self,selector:"fun1",object:nil)
-//th1.start()
-        
 
-//        dispatch_async(dispatch_get_main_queue(), { () -> Void in
-//            //code here
-//            print("hehe")
-//            self.OrderInfoLabel.text="go"
-//        })
         
+    }
+    func handleCompleteDownload() {
+        // if notification received, change label value
+//        OrderInfoLabel.text = notification.userInfo!["order"] as! String
+//        print(notification.userInfo)
+print("daf")
     }
     @IBAction func PickUpAction(sender: AnyObject) {
         let delegate = UIApplication.sharedApplication().delegate as! AppDelegate
