@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -24,7 +24,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mSB-hc-LIz">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="QR" translatesAutoresizingMaskIntoConstraints="NO" id="mSB-hc-LIz">
                                 <rect key="frame" x="185" y="87" width="230" height="230"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="230" id="OfI-lv-eGQ"/>
@@ -59,7 +59,7 @@
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yNx-o7-TQa">
                                 <rect key="frame" x="236" y="499" width="131" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="Open Box"/>
+                                <state key="normal" backgroundImage="button"/>
                                 <connections>
                                     <action selector="PickUpAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7I8-KY-AL3"/>
                                 </connections>
@@ -88,7 +88,6 @@
                             <constraint firstItem="vz2-hu-0HF" firstAttribute="centerX" secondItem="Wof-hQ-h8U" secondAttribute="centerX" id="eJS-AN-At2"/>
                             <constraint firstItem="mSB-hc-LIz" firstAttribute="top" secondItem="uBa-mQ-gbg" secondAttribute="bottom" constant="8" symbolic="YES" id="eNE-8H-sZJ"/>
                             <constraint firstItem="uBa-mQ-gbg" firstAttribute="centerX" secondItem="mSB-hc-LIz" secondAttribute="centerX" id="f9V-Wn-i2l"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="yNx-o7-TQa" secondAttribute="bottom" constant="53" id="iOF-Pr-HEV"/>
                             <constraint firstItem="z2W-TZ-QyL" firstAttribute="centerX" secondItem="Wof-hQ-h8U" secondAttribute="centerX" id="tjl-lb-piO"/>
                             <constraint firstItem="z2W-TZ-QyL" firstAttribute="top" secondItem="Wof-hQ-h8U" secondAttribute="bottom" constant="8" symbolic="YES" id="xGL-z2-lpu"/>
                             <constraint firstItem="yNx-o7-TQa" firstAttribute="top" secondItem="z2W-TZ-QyL" secondAttribute="bottom" constant="16" id="yPT-tA-Xan"/>
@@ -104,4 +103,8 @@
             <point key="canvasLocation" x="447" y="425"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="QR" width="567" height="500"/>
+        <image name="button" width="141" height="52"/>
+    </resources>
 </document>

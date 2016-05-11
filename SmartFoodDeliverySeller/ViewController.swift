@@ -55,7 +55,7 @@ class ViewController: UIViewController {
     }
     func httpPost(postString: String){
         let request = NSMutableURLRequest(URL: NSURL(string:
-            "http://128.59.46.47:5000/delivery")!); request.HTTPMethod = "POST"
+            "http://129.236.230.130:5000/deliver")!); request.HTTPMethod = "POST"
         //Show the message sent to PI on IOS device
         request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
         
@@ -71,10 +71,7 @@ class ViewController: UIViewController {
         }
         task.resume()
     }
-//    func fun1(){
-//        OrderInfoLabel.text="go"
-//        print("jhe")
-//    }
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
